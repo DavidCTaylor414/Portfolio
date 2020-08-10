@@ -1,0 +1,833 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  background-color: #fff;
+}
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    color: #000;
+    font: 400 16px/1.2 'SamsungRegular', sans-serif;
+    height: auto;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+}
+p, a, li, ol, ul, div {
+    font-family: 'SamsungRegular', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
+b, strong, h1, h2, h3, h4, h5, h6 {
+    font-family: 'SamsungRegular', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+nav.upper-nav a {
+    font-family: 'SamsungRegular', Helvetica, Arial, sans-serif;
+}
+div {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0px 0px 10px #666;
+    padding: .5em 0 1em 0;
+    position: relative;
+    z-index: 9999999999999;
+}
+#header-logo {
+    margin: 0;
+}
+#header-logo,
+.nav-links {
+    text-align: center;
+}
+#header-logo img {
+    width: 200px;
+}
+.nav-links {
+    display: block;
+    margin: .2em 0 0;
+    padding: 0;
+}
+nav.upper-nav li {
+    display: inline-block;
+    margin: 0 .5em;
+}
+nav.upper-nav li:hover {
+    cursor: pointer;
+}
+nav.upper-nav a {
+    color: #361a6e;
+    display: inline-block;
+    text-decoration: none;
+}
+nav.upper-nav a,
+#contact-info a span {
+    text-decoration: none;
+    padding: 0 2px;
+    position: relative;
+    transition: all 0.35s;
+    overflow: hidden !important;
+}
+nav.upper-nav a::after,
+#contact-info a span::after {
+    content: "";
+    border-bottom: solid 2px;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    transition: all 0.35s;
+}
+nav.upper-nav a:hover:after,
+#contact-info a:hover span:after {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.35s;
+}
+
+/* ===== BODY ===== */
+
+/* === Parallax Effect - Home Page */
+.parallax {
+    bottom: 0;
+    height: 99.99vh;
+    left: -1%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.parallax__layer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.parallax__layer img {
+    width: 100%;
+    bottom: 0;
+    display: block;
+    position: absolute;
+}
+.parallax__cover {
+    background: #fff;
+    display: block;
+    height: 500px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 100%;
+    z-index: 2;
+}
+
+
+.parallax__layer__3 {
+    transform: translateZ(-150px) scale(2.5);
+}
+.parallax__layer__3 img{
+    top: 0;
+}
+.parallax__layer__5 {
+    transform: translateZ(-50px) scale(1.5);
+}
+.parallax__layer__5 img{
+    top: 0;
+}
+
+/* === Other === */
+.content-container {
+    display: block;
+    top: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+h1, h2, h3 {
+    font-size: 250%;
+    letter-spacing: .1em;
+    text-align: center;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 140%;
+}
+#summary {
+    margin-top: 10em;
+    background-color: rgb(255, 255, 255);
+}
+.summary-container {
+    /*border: 1px solid #361b6d;*/
+    border-radius: 1em;
+    color: #000;
+    margin: 0 auto;
+    max-width: 60em;
+    padding: 2em;
+    text-align: justify;
+}
+.summary-container p {
+    font-size: 105%;
+}
+#portfolio {
+    margin-top: 10em;
+}
+.portfolio-elements,
+.portfolio-items {
+    align-content: flex-start;
+    align-items: stretch;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 1%;
+    padding: 0;
+}
+#portfolio-one a {
+    background: url("../images/electrolux-portfolio-thumbnail.jpg");
+}
+#portfolio-two a {
+    background: url("../images/aeg-portfolio-thumbnail.jpg");
+}
+#portfolio-three a {
+    background: url("../images/zanussi-portfolio-thumbnail.jpg");
+}
+#portfolio-four a {
+    background: url("../images/electroluxminorbrands-portfolio-thumbnail.jpg");
+}
+#portfolio-five a {
+    background: url("../images/fisherpaykel-portfolio-thumbnail.png");
+}
+#portfolio-six a {
+    background: url("../images/crystalski-portfolio-thumbnail.png");
+}
+#portfolio-seven a {
+    background: url("../images/leica-portfolio-thumbnail.png");
+}
+#portfolio-eight a {
+    background: url("../images/windriver-portfolio-thumbnail.png");
+}
+#portfolio-nine a {
+    background: url("../images/graffiti-portfolio-thumbnail.jpg");
+}
+#portfolio-more a {
+    background: url("../images/customers-worked-with.gif");
+    background-position: 10% 10% !important;
+}
+.portfolio-elements li,
+.portfolio-items li {
+    background: #111;
+    display: inline-block;
+    flex: 1 1 30%;
+    list-style: none;
+    margin: .5%;
+    overflow: hidden;
+    text-align: center;
+    transition: all .5s;
+}
+@media all and (max-width: 50em) {
+    .portfolio-elements li {
+        flex: 1 1 45%;
+        margin: 1%;
+    }
+}
+@media all and (max-width: 25em) {
+    .portfolio-elements li {
+        flex: 1 1 90%;
+    }
+}
+.portfolio-items li {
+    flex: 1 1 30%;
+}
+@media all and (max-width: 50em) {
+    .portfolio-items li {
+        flex: 1 1 45%;
+    }
+}
+@media all and (max-width: 37.5em) {
+    .portfolio-items li {
+        flex: 1 1 90%;
+    }
+}
+.portfolio-elements li a,
+.portfolio-items li a {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    color: #fff;
+    display: block;
+    opacity: .75;
+    padding-top: 14em;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: all .5s;
+}
+.portfolio-items li a {
+    padding-top: 18em;
+}
+/*@media all and (max-width: 50em) {
+    .portfolio-elements li {
+        padding-top: 14em;
+    }
+}
+@media all and (max-width: 25em) {
+    .portfolio-elements li {
+        padding-top: 12em;
+    }
+}*/
+.portfolio-elements li a:hover,
+.portfolio-items li a:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+.portfolio-item-title {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: block;
+    font-size: 110%;
+    font-weight: 700;
+    padding: 1em 0;
+}
+.data-portfolio-link {
+    display: block;
+    font-size: 120%;
+    margin: 2em 0 3em;
+    padding: .5em;
+    text-align: center;
+}
+.data-portfolio-link a {
+    background: #fff;
+    border: 2px solid;
+    border-radius: .25em;
+    padding: .75em 2em;
+    transition: all .5s;
+}
+.data-portfolio-link a:hover {
+    background: #361a6e;
+    border: 2px solid #361a6e;
+    color: #fff;
+}
+#psuedo-footer {
+    margin-top: 1em;
+    background-color: #ddd;
+    padding: 1em 1%;
+}
+#psuedo-footer div {
+    padding: .5%;
+}
+#company-name p {
+    color: #444;
+    display: inline-block;
+    font-size: 120%;
+    margin: 0;
+    padding-left: .5em;
+    position: relative;
+    top: -.5em;
+}
+.parallax__cover img {
+    filter: invert(100%)contrast(10000%);
+    margin: 0 auto;
+    padding-left: 1.5em;
+    position: relative;
+    top: -7em;
+    width: 100px;
+}
+
+/* ===== FOOTER & SOCIAL MEDIA ICONS ===== */
+footer {
+    bottom: 0;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+}
+.social-media-icons {
+    text-align: right;
+    padding-right: 1.5em;
+}
+.social-media-icons i {
+    display: inline-block;
+}
+.social-media-icons i:hover {
+    filter: sepia(30%)contrast(150%);
+}
+.social-media-icons .email i:before,
+.social-media-icons .linkedin i:before,
+.social-media-icons .facebook i:before {
+    content: '';
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+}
+.social-media-icons .email i:before {
+    background: url("../images/email-icon-32.png") no-repeat;
+}
+.social-media-icons .linkedin i:before {
+    background: url("../images/linkedin-icon-32-filled.png") no-repeat;
+}
+.social-media-icons .facebook i:before {
+    background: url("../images/facebook-icon-32-filled.png") no-repeat;
+}
+
+/* ===== UNIQUE PAGES ===== */
+
+/* === Contact Page === */
+#contact-page {
+    background: url("../images/sandiego-background.jpg") no-repeat 50% 50% #00397f;
+    background-size: cover;
+    min-height: 100vh;
+}
+#contact-container {
+    padding: 2em;
+}
+#contact-info {
+    background-color: rgba(255, 255, 255, .8);
+    margin: 0 auto;
+    max-width: 40em;
+    padding: .5em;
+}
+#contact-info a,
+#contact-info a:visited {
+    color: #003a7f;
+    font-size: 120%;
+    padding-left: 10%;
+}
+@media all and (max-width: 25em) {
+    #contact-info a,
+    #contact-info a:visited {
+        color: #003a7f;
+        font-size: 95%;
+    }
+}
+#contact-info a:active,
+#contact-info a:focus {
+    color: #36186e;
+}
+#contact-info .email-link::before,
+#contact-info .linkedin-link::before,
+#contact-info .facebook-link::before {
+    background-size: 1.3em !important;
+    content: '';
+    display: inline-block;
+    height: 1.3em;
+    padding-right: .5em;
+    width: 1.3em;
+}
+#contact-info .email-link:before {
+    background: url("../images/email-icon-32.png") no-repeat;
+}
+#contact-info .linkedin-link:before {
+    background: url("../images/linkedin-icon-32-filled.png") no-repeat;
+}
+#contact-info .facebook-link:before {
+    background: url("../images/facebook-icon-32-filled.png") no-repeat;
+}
+.facebook {
+    display: none;
+}
+#contact-info p {
+    font-size: 120%;
+    text-align: center;
+}
+#contact-info p a {
+    font-size: 100%;
+    padding-left: 0;
+}
+#contact-information-details ul {
+    padding-left: 10%;
+}
+#contact-info .learn-more {
+    display: block;
+    padding-left: 0;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+/* === About Page === */
+#about-page {
+    background: url("../images/about2.jpg") no-repeat 100% 50% #00397f;
+    background-size: cover;
+    min-height: 100vh;
+}
+#about-page #contact-info {
+    background-color: rgba(255, 255, 255, .5);
+    margin: 0;
+    max-width: 50em;
+    padding: 1em;
+}
+#about-page p {
+    font-size: initial;
+    text-align: justify;
+}
+
+/* === Skills Page === */
+#donutchart,
+#donutcharttwo,
+#donutchartthree {
+    margin: 0 auto;
+    min-height: 450px;
+    text-align: center;
+    width: 100%;
+}
+#donutchartthree {
+    min-height: 600px;
+}
+#donutchart g text,
+#donutcharttwo g text,
+#donutchartthree g text {
+    font-size: 120%;
+}
+@media all and (max-width: 50em) {
+    #donutchart,
+    #donutcharttwo,
+    #donutchartthree {
+        min-height: 300px;
+        width: 100%;
+    }
+}
+@media all and (max-width: 50em) {
+    #donutchartthree {
+        min-height: 550px;
+    }
+}
+@media all and (max-width: 50em) {
+    #donutchart g text,
+    #donutcharttwo g text,
+    #donutchartthree g text {
+        font-size: 100%;
+        line-height: 1.2em;
+    }
+}
+/* ===== Portfolio Pages ===== */
+.portfolio-items li a {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    opacity: .75;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: all .5s;
+}
+.portfolio-elements li a:hover,
+.portfolio-items li a:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+}
+.portfolio-hightlights {
+    margin: 0 1% 5em;
+}
+.portfolio-hightlights img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* === Portfolio Page - Electrolux === */
+.portfolio-items #elux-item-1 a {background: url("../images/electrolux/electrolux-screenshot-1.png") no-repeat;}
+.portfolio-items #elux-item-2 a {background: url("../images/electrolux/electrolux-screenshot-2.png") no-repeat;}
+.portfolio-items #elux-item-3 a {background: url("../images/electrolux/electrolux-screenshot-3.png") no-repeat;}
+.portfolio-items #elux-item-4 a {background: url("../images/electrolux/electrolux-screenshot-4.png") no-repeat;}
+.portfolio-items #elux-item-5 a {background: url("../images/electrolux/electrolux-screenshot-5.png") no-repeat;}
+.portfolio-items #elux-item-6 a {background: url("../images/electrolux/electrolux-screenshot-6.png") no-repeat;}
+.portfolio-items #elux-item-7 a {background: url("../images/electrolux/electrolux-screenshot-7.png") no-repeat;}
+.portfolio-items #elux-item-8 a {background: url("../images/electrolux/electrolux-screenshot-8.png") no-repeat;}
+.portfolio-items #elux-item-9 a {background: url("../images/electrolux/electrolux-screenshot-9.png") no-repeat;}
+.portfolio-items #elux-item-10 a {background: url("../images/electrolux/electrolux-screenshot-10.png") no-repeat;}
+.portfolio-items #elux-item-11 a {background: url("../images/electrolux/electrolux-screenshot-11.png") no-repeat;}
+.portfolio-items #elux-item-12 a {background: url("../images/electrolux/electrolux-screenshot-12.png") no-repeat;}
+.portfolio-items #elux-item-13 a {background: url("../images/electrolux/electrolux-screenshot-13.png") no-repeat;}
+.portfolio-items #elux-item-14 a {background: url("../images/electrolux/electrolux-screenshot-14.png") no-repeat;}
+.portfolio-items #elux-item-15 a {background: url("../images/electrolux/electrolux-screenshot-15.png") no-repeat;}
+.portfolio-items #elux-item-16 a {background: url("../images/electrolux/electrolux-screenshot-16.png") no-repeat;}
+.portfolio-items #elux-item-17 a {background: url("../images/electrolux/electrolux-screenshot-17.png") no-repeat;}
+.portfolio-items #elux-item-18 a {background: url("../images/electrolux/electrolux-screenshot-18.png") no-repeat;}
+.portfolio-items #elux-item-19 a {background: url("../images/electrolux/electrolux-screenshot-19.png") no-repeat;}
+.portfolio-items #elux-item-20 a {background: url("../images/electrolux/electrolux-screenshot-20.png") no-repeat;}
+.portfolio-items #elux-item-21 a {background: url("../images/electrolux/electrolux-screenshot-21.png") no-repeat;}
+.portfolio-items #elux-item-22 a {background: url("../images/electrolux/electrolux-screenshot-22.png") no-repeat;}
+.portfolio-items #elux-item-23 a {background: url("../images/electrolux/electrolux-screenshot-23.png") no-repeat;}
+.portfolio-items #elux-item-24 a {background: url("../images/electrolux/electrolux-screenshot-24.png") no-repeat;}
+.portfolio-items #elux-item-25 a {background: url("../images/electrolux/electrolux-screenshot-25.png") no-repeat;}
+.portfolio-items #elux-item-26 a {background: url("../images/electrolux/electrolux-screenshot-26.png") no-repeat;}
+.portfolio-items #elux-item-27 a {background: url("../images/electrolux/electrolux-screenshot-27.png") no-repeat;}
+.portfolio-items #elux-item-28 a {background: url("../images/electrolux/electrolux-screenshot-28.png") no-repeat;}
+.portfolio-items #elux-item-29 a {background: url("../images/electrolux/electrolux-screenshot-29.png") no-repeat;}
+.portfolio-items #elux-item-30 a {background: url("../images/electrolux/electrolux-screenshot-30.png") no-repeat;}
+.portfolio-items #elux-item-31 a {background: url("../images/electrolux/electrolux-screenshot-31.png") no-repeat;}
+.portfolio-items #elux-item-32 a {background: url("../images/electrolux/electrolux-screenshot-32.png") no-repeat;}
+.portfolio-items #elux-item-33 a {background: url("../images/electrolux/electrolux-screenshot-33.png") no-repeat;}
+.portfolio-items #elux-item-34 a {background: url("../images/electrolux/electrolux-screenshot-34.png") no-repeat;}
+.portfolio-items #elux-item-35 a {background: url("../images/electrolux/electrolux-screenshot-35.png") no-repeat;}
+.portfolio-items #elux-item-36 a {background: url("../images/electrolux/electrolux-screenshot-36.png") no-repeat;}
+.portfolio-items #elux-item-37 a {background: url("../images/electrolux/electrolux-screenshot-37.png") no-repeat;}
+.portfolio-items #elux-item-38 a {background: url("../images/electrolux/electrolux-screenshot-38.png") no-repeat;}
+.portfolio-items #elux-item-39 a {background: url("../images/electrolux/electrolux-screenshot-39.png") no-repeat;}
+
+/* === Portfolio Page - AEG === */
+.portfolio-items #aeg-item-1 a {background: url("../images/aeg/aeg-screenshot-1.png") no-repeat;}
+.portfolio-items #aeg-item-2 a {background: url("../images/aeg/aeg-screenshot-2.png") no-repeat;}
+.portfolio-items #aeg-item-3 a {background: url("../images/aeg/aeg-screenshot-3.png") no-repeat;}
+.portfolio-items #aeg-item-4 a {background: url("../images/aeg/aeg-screenshot-4.png") no-repeat;}
+.portfolio-items #aeg-item-5 a {background: url("../images/aeg/aeg-screenshot-5.png") no-repeat;}
+.portfolio-items #aeg-item-6 a {background: url("../images/aeg/aeg-screenshot-6.png") no-repeat;}
+.portfolio-items #aeg-item-7 a {background: url("../images/aeg/aeg-screenshot-7.png") no-repeat;}
+.portfolio-items #aeg-item-8 a {background: url("../images/aeg/aeg-screenshot-8.png") no-repeat;}
+.portfolio-items #aeg-item-9 a {background: url("../images/aeg/aeg-screenshot-9.png") no-repeat;}
+.portfolio-items #aeg-item-10 a {background: url("../images/aeg/aeg-screenshot-10.png") no-repeat;}
+.portfolio-items #aeg-item-11 a {background: url("../images/aeg/aeg-screenshot-11.png") no-repeat;}
+.portfolio-items #aeg-item-12 a {background: url("../images/aeg/aeg-screenshot-12.png") no-repeat;}
+.portfolio-items #aeg-item-13 a {background: url("../images/aeg/aeg-screenshot-13.png") no-repeat;}
+.portfolio-items #aeg-item-14 a {background: url("../images/aeg/aeg-screenshot-14.png") no-repeat;}
+.portfolio-items #aeg-item-15 a {background: url("../images/aeg/aeg-screenshot-15.png") no-repeat;}
+.portfolio-items #aeg-item-16 a {background: url("../images/aeg/aeg-screenshot-16.png") no-repeat;}
+.portfolio-items #aeg-item-17 a {background: url("../images/aeg/aeg-screenshot-17.png") no-repeat;}
+.portfolio-items #aeg-item-18 a {background: url("../images/aeg/aeg-screenshot-18.png") no-repeat;}
+.portfolio-items #aeg-item-19 a {background: url("../images/aeg/aeg-screenshot-19.png") no-repeat;}
+.portfolio-items #aeg-item-20 a {background: url("../images/aeg/aeg-screenshot-20.png") no-repeat;}
+.portfolio-items #aeg-item-21 a {background: url("../images/aeg/aeg-screenshot-21.png") no-repeat;}
+.portfolio-items #aeg-item-22 a {background: url("../images/aeg/aeg-screenshot-22.png") no-repeat;}
+.portfolio-items #aeg-item-23 a {background: url("../images/aeg/aeg-screenshot-23.png") no-repeat;}
+.portfolio-items #aeg-item-24 a {background: url("../images/aeg/aeg-screenshot-24.png") no-repeat;}
+.portfolio-items #aeg-item-25 a {background: url("../images/aeg/aeg-screenshot-25.png") no-repeat;}
+.portfolio-items #aeg-item-26 a {background: url("../images/aeg/aeg-screenshot-26.png") no-repeat;}
+.portfolio-items #aeg-item-27 a {background: url("../images/aeg/aeg-screenshot-27.png") no-repeat;}
+.portfolio-items #aeg-item-28 a {background: url("../images/aeg/aeg-screenshot-28.png") no-repeat;}
+.portfolio-items #aeg-item-29 a {background: url("../images/aeg/aeg-screenshot-29.png") no-repeat;}
+.portfolio-items #aeg-item-30 a {background: url("../images/aeg/aeg-screenshot-30.png") no-repeat;}
+.portfolio-items #aeg-item-31 a {background: url("../images/aeg/aeg-screenshot-31.png") no-repeat;}
+.portfolio-items #aeg-item-32 a {background: url("../images/aeg/aeg-screenshot-32.png") no-repeat;}
+.portfolio-items #aeg-item-33 a {background: url("../images/aeg/aeg-screenshot-33.png") no-repeat;}
+.portfolio-items #aeg-item-34 a {background: url("../images/aeg/aeg-screenshot-34.png") no-repeat;}
+.portfolio-items #aeg-item-35 a {background: url("../images/aeg/aeg-screenshot-35.png") no-repeat;}
+.portfolio-items #aeg-item-36 a {background: url("../images/aeg/aeg-screenshot-36.png") no-repeat;}
+.portfolio-items #aeg-item-37 a {background: url("../images/aeg/aeg-screenshot-37.png") no-repeat;}
+.portfolio-items #aeg-item-38 a {background: url("../images/aeg/aeg-screenshot-38.png") no-repeat;}
+.portfolio-items #aeg-item-39 a {background: url("../images/aeg/aeg-screenshot-39.png") no-repeat;}
+.portfolio-items #aeg-item-40 a {background: url("../images/aeg/aeg-screenshot-40.png") no-repeat;}
+.portfolio-items #aeg-item-41 a {background: url("../images/aeg/aeg-screenshot-41.png") no-repeat;}
+.portfolio-items #aeg-item-42 a {background: url("../images/aeg/aeg-screenshot-42.png") no-repeat;}
+.portfolio-items #aeg-item-43 a {background: url("../images/aeg/aeg-screenshot-43.png") no-repeat;}
+.portfolio-items #aeg-item-44 a {background: url("../images/aeg/aeg-screenshot-44.png") no-repeat;}
+.portfolio-items #aeg-item-45 a {background: url("../images/aeg/aeg-screenshot-45.png") no-repeat;}
+
+/* === Portfolio Page - Zanussi === */
+.portfolio-items #zanussi-item-1 a {background: url("../images/zanussi/zanussi-screenshot-1.png") no-repeat;}
+.portfolio-items #zanussi-item-2 a {background: url("../images/zanussi/zanussi-screenshot-2.png") no-repeat;}
+.portfolio-items #zanussi-item-3 a {background: url("../images/zanussi/zanussi-screenshot-3.png") no-repeat;}
+.portfolio-items #zanussi-item-4 a {background: url("../images/zanussi/zanussi-screenshot-4.png") no-repeat;}
+.portfolio-items #zanussi-item-5 a {background: url("../images/zanussi/zanussi-screenshot-5.png") no-repeat;}
+.portfolio-items #zanussi-item-6 a {background: url("../images/zanussi/zanussi-screenshot-6.png") no-repeat;}
+.portfolio-items #zanussi-item-7 a {background: url("../images/zanussi/zanussi-screenshot-7.png") no-repeat;}
+.portfolio-items #zanussi-item-8 a {background: url("../images/zanussi/zanussi-screenshot-8.png") no-repeat;}
+.portfolio-items #zanussi-item-9 a {background: url("../images/zanussi/zanussi-screenshot-9.png") no-repeat;}
+.portfolio-items #zanussi-item-10 a {background: url("../images/zanussi/zanussi-screenshot-10.png") no-repeat;}
+.portfolio-items #zanussi-item-11 a {background: url("../images/zanussi/zanussi-screenshot-11.png") no-repeat;}
+.portfolio-items #zanussi-item-12 a {background: url("../images/zanussi/zanussi-screenshot-12.png") no-repeat;}
+.portfolio-items #zanussi-item-13 a {background: url("../images/zanussi/zanussi-screenshot-13.png") no-repeat;}
+.portfolio-items #zanussi-item-14 a {background: url("../images/zanussi/zanussi-screenshot-14.png") no-repeat;}
+.portfolio-items #zanussi-item-15 a {background: url("../images/zanussi/zanussi-screenshot-15.png") no-repeat;}
+.portfolio-items #zanussi-item-16 a {background: url("../images/zanussi/zanussi-screenshot-16.png") no-repeat;}
+.portfolio-items #zanussi-item-17 a {background: url("../images/zanussi/zanussi-screenshot-17.png") no-repeat;}
+.portfolio-items #zanussi-item-18 a {background: url("../images/zanussi/zanussi-screenshot-18.png") no-repeat;}
+.portfolio-items #zanussi-item-19 a {background: url("../images/zanussi/zanussi-screenshot-19.png") no-repeat;}
+.portfolio-items #zanussi-item-20 a {background: url("../images/zanussi/zanussi-screenshot-20.png") no-repeat;}
+.portfolio-items #zanussi-item-21 a {background: url("../images/zanussi/zanussi-screenshot-21.png") no-repeat;}
+.portfolio-items #zanussi-item-22 a {background: url("../images/zanussi/zanussi-screenshot-22.png") no-repeat;}
+.portfolio-items #zanussi-item-23 a {background: url("../images/zanussi/zanussi-screenshot-23.png") no-repeat;}
+.portfolio-items #zanussi-item-24 a {background: url("../images/zanussi/zanussi-screenshot-24.png") no-repeat;}
+.portfolio-items #zanussi-item-25 a {background: url("../images/zanussi/zanussi-screenshot-25.png") no-repeat;}
+.portfolio-items #zanussi-item-26 a {background: url("../images/zanussi/zanussi-screenshot-26.png") no-repeat;}
+.portfolio-items #zanussi-item-27 a {background: url("../images/zanussi/zanussi-screenshot-27.png") no-repeat;}
+.portfolio-items #zanussi-item-28 a {background: url("../images/zanussi/zanussi-screenshot-28.png") no-repeat;}
+.portfolio-items #zanussi-item-29 a {background: url("../images/zanussi/zanussi-screenshot-29.png") no-repeat;}
+.portfolio-items #zanussi-item-30 a {background: url("../images/zanussi/zanussi-screenshot-30.png") no-repeat;}
+.portfolio-items #zanussi-item-31 a {background: url("../images/zanussi/zanussi-screenshot-31.png") no-repeat;}
+.portfolio-items #zanussi-item-32 a {background: url("../images/zanussi/zanussi-screenshot-32.png") no-repeat;}
+.portfolio-items #zanussi-item-33 a {background: url("../images/zanussi/zanussi-screenshot-33.png") no-repeat;}
+.portfolio-items #zanussi-item-34 a {background: url("../images/zanussi/zanussi-screenshot-34.png") no-repeat;}
+.portfolio-items #zanussi-item-35 a {background: url("../images/zanussi/zanussi-screenshot-35.png") no-repeat;}
+.portfolio-items #zanussi-item-36 a {background: url("../images/zanussi/zanussi-screenshot-36.png") no-repeat;}
+.portfolio-items #zanussi-item-37 a {background: url("../images/zanussi/zanussi-screenshot-37.png") no-repeat;}
+.portfolio-items #zanussi-item-38 a {background: url("../images/zanussi/zanussi-screenshot-38.png") no-repeat;}
+.portfolio-items #zanussi-item-39 a {background: url("../images/zanussi/zanussi-screenshot-39.png") no-repeat;}
+.portfolio-items #zanussi-item-40 a {background: url("../images/zanussi/zanussi-screenshot-40.png") no-repeat;}
+.portfolio-items #zanussi-item-41 a {background: url("../images/zanussi/zanussi-screenshot-41.png") no-repeat;}
+.portfolio-items #zanussi-item-42 a {background: url("../images/zanussi/zanussi-screenshot-42.png") no-repeat;}
+.portfolio-items #zanussi-item-43 a {background: url("../images/zanussi/zanussi-screenshot-43.png") no-repeat;}
+.portfolio-items #zanussi-item-44 a {background: url("../images/zanussi/zanussi-screenshot-44.png") no-repeat;}
+.portfolio-items #zanussi-item-45 a {background: url("../images/zanussi/zanussi-screenshot-45.png") no-repeat;}
+
+/* === Portfolio Page - Electrolux Group Minor Brands === */
+.portfolio-items #eluxminorbrands-item-1 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-2 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-2.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-3 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-3.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-4 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-4.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-5 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-5.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-6 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-6.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-7 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-7.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-8 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-8.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-9 a {background: url("../images/eluxminorbrands/eluxminorbrand-screenshot-9.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-10 a {background: url("../images/eluxminorbrands/ElektroHelios-Screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-11 a {background: url("../images/eluxminorbrands/ElektroHelios-Screenshot-2.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-12 a {background: url("../images/eluxminorbrands/ElektroHelios-Screenshot-3.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-13 a {background: url("../images/eluxminorbrands/Rosenlew-Screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-14 a {background: url("../images/eluxminorbrands/Rosenlew-Screenshot-2.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-15 a {background: url("../images/eluxminorbrands/Rosenlew-Screenshot-3.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-16 a {background: url("../images/eluxminorbrands/Voss-Screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-17 a {background: url("../images/eluxminorbrands/Voss-Screenshot-2.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-18 a {background: url("../images/eluxminorbrands/Voss-Screenshot-3.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-19 a {background: url("../images/eluxminorbrands/Husqvarna-Screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-20 a {background: url("../images/eluxminorbrands/Husqvarna-Screenshot-2.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-21 a {background: url("../images/eluxminorbrands/Husqvarna-Screenshot-3.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-22 a {background: url("../images/eluxminorbrands/Husqvarna-Screenshot-4.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-23 a {background: url("../images/eluxminorbrands/Husqvarna-Screenshot-5.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-24 a {background: url("../images/eluxminorbrands/Faure-Screenshot-1.png") no-repeat;}
+.portfolio-items #eluxminorbrands-item-25 a {background: url("../images/eluxminorbrands/Faure-Screenshot-2.png") no-repeat;}
+
+/* === Portfolio Page - FisherPaykel === */
+.portfolio-items #fisherpaykel-item-1 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-1.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-2 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-2.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-3 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-3.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-4 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-4.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-5 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-5.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-6 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-6.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-7 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-7.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-8 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-8.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-9 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-9.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-10 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-10.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-11 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-11.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-12 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-12.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-13 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-13.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-14 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-14.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-15 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-15.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-16 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-16.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-17 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-17.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-18 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-18.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-19 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-19.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-20 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-20.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-21 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-21.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-22 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-22.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-23 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-23.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-24 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-24.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-25 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-25.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-26 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-26.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-27 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-27.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-28 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-28.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-29 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-29.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-30 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-30.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-31 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-31.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-32 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-32.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-33 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-33.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-34 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-34.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-35 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-35.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-36 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-36.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-37 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-37.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-38 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-38.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-39 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-39.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-40 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-40.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-41 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-41.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-42 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-42.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-43 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-43.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-44 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-44.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-45 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-45.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-46 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-46.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-47 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-47.png") no-repeat;}
+.portfolio-items #fisherpaykel-item-48 a {background: url("../images/fisherpaykel/fisherpaykel-screenshot-48.png") no-repeat;}
+
+/* === Portfolio Page - CrystalSki === */
+.portfolio-items #crystalski-item-1 a {background: url("../images/crystalski/crystalski-screenshot-1.png") no-repeat;}
+.portfolio-items #crystalski-item-2 a {background: url("../images/crystalski/crystalski-screenshot-2.png") no-repeat;}
+.portfolio-items #crystalski-item-3 a {background: url("../images/crystalski/crystalski-screenshot-3.png") no-repeat;}
+.portfolio-items #crystalski-item-4 a {background: url("../images/crystalski/crystalski-screenshot-4.png") no-repeat;}
+.portfolio-items #crystalski-item-5 a {background: url("../images/crystalski/crystalski-screenshot-5.png") no-repeat;}
+.portfolio-items #crystalski-item-6 a {background: url("../images/crystalski/crystalski-screenshot-6.jpg") no-repeat;}
+.portfolio-items #crystalski-item-7 a {background: url("../images/crystalski/crystalski-screenshot-7.png") no-repeat;}
+.portfolio-items #crystalski-item-8 a {background: url("../images/crystalski/crystalski-screenshot-8.png") no-repeat;}
+.portfolio-items #crystalski-item-9 a {background: url("../images/crystalski/crystalski-screenshot-9.png") no-repeat;}
+.portfolio-items #crystalski-item-10 a {background: url("../images/crystalski/crystalski-screenshot-10.png") no-repeat;}
+.portfolio-items #crystalski-item-11 a {background: url("../images/crystalski/crystalski-screenshot-11.png") no-repeat;}
+.portfolio-items #crystalski-item-12 a {background: url("../images/crystalski/crystalski-screenshot-12.png") no-repeat;}
+.portfolio-items #crystalski-item-13 a {background: url("../images/crystalski/crystalski-screenshot-13.png") no-repeat;}
+.portfolio-items #crystalski-item-14 a {background: url("../images/crystalski/crystalski-screenshot-14.png") no-repeat;}
+.portfolio-items #crystalski-item-15 a {background: url("../images/crystalski/crystalski-screenshot-15.png") no-repeat;}
+.portfolio-items #crystalski-item-16 a {background: url("../images/crystalski/crystalski-screenshot-16.png") no-repeat;}
+.portfolio-items #crystalski-item-17 a {background: url("../images/crystalski/crystalski-screenshot-17.png") no-repeat;}
+.portfolio-items #crystalski-item-18 a {background: url("../images/crystalski/crystalski-screenshot-18.png") no-repeat;}
+.portfolio-items #crystalski-item-19 a {background: url("../images/crystalski/crystalski-screenshot-19.png") no-repeat;}
+.portfolio-items #crystalski-item-20 a {background: url("../images/crystalski/crystalski-screenshot-20.png") no-repeat;}
+.portfolio-items #crystalski-item-21 a {background: url("../images/crystalski/crystalski-screenshot-21.png") no-repeat;}
+.portfolio-items #crystalski-item-22 a {background: url("../images/crystalski/crystalski-screenshot-22.png") no-repeat;}
+.portfolio-items #crystalski-item-23 a {background: url("../images/crystalski/crystalski-screenshot-23.png") no-repeat;}
+.portfolio-items #crystalski-item-24 a {background: url("../images/crystalski/crystalski-screenshot-24.png") no-repeat;}
+.portfolio-items #crystalski-item-25 a {background: url("../images/crystalski/crystalski-screenshot-25.png") no-repeat;}
+.portfolio-items #crystalski-item-26 a {background: url("../images/crystalski/crystalski-screenshot-26.png") no-repeat;}
+.portfolio-items #crystalski-item-27 a {background: url("../images/crystalski/crystalski-screenshot-27.png") no-repeat;}
+.portfolio-items #crystalski-item-28 a {background: url("../images/crystalski/crystalski-screenshot-28.png") no-repeat;}
+.portfolio-items #crystalski-item-29 a {background: url("../images/crystalski/crystalski-screenshot-29.png") no-repeat;}
+.portfolio-items #crystalski-item-30 a {background: url("../images/crystalski/crystalski-screenshot-30.png") no-repeat;}
+.portfolio-items #crystalski-item-31 a {background: url("../images/crystalski/crystalski-screenshot-31.png") no-repeat;}
+.portfolio-items #crystalski-item-32 a {background: url("../images/crystalski/crystalski-screenshot-32.png") no-repeat;}
+.portfolio-items #crystalski-item-33 a {background: url("../images/crystalski/crystalski-screenshot-33.png") no-repeat;}
+.portfolio-items #crystalski-item-34 a {background: url("../images/crystalski/crystalski-screenshot-34.png") no-repeat;}
+.portfolio-items #crystalski-item-35 a {background: url("../images/crystalski/crystalski-screenshot-35.png") no-repeat;}
+.portfolio-items #crystalski-item-36 a {background: url("../images/crystalski/crystalski-screenshot-36.png") no-repeat;}
+.portfolio-items #crystalski-item-37 a {background: url("../images/crystalski/crystalski-screenshot-37.png") no-repeat;}
+.portfolio-items #crystalski-item-38 a {background: url("../images/crystalski/crystalski-screenshot-38.png") no-repeat;}
+.portfolio-items #crystalski-item-39 a {background: url("../images/crystalski/crystalski-screenshot-39.png") no-repeat;}
+.portfolio-items #crystalski-item-40 a {background: url("../images/crystalski/crystalski-screenshot-40.png") no-repeat;}
+.portfolio-items #crystalski-item-41 a {background: url("../images/crystalski/crystalski-screenshot-41.png") no-repeat;}
+.portfolio-items #crystalski-item-42 a {background: url("../images/crystalski/crystalski-screenshot-42.png") no-repeat;}
+.portfolio-items #crystalski-item-43 a {background: url("../images/crystalski/crystalski-screenshot-43.png") no-repeat;}
+.portfolio-items #crystalski-item-44 a {background: url("../images/crystalski/crystalski-screenshot-44.png") no-repeat;}
+.portfolio-items #crystalski-item-45 a {background: url("../images/crystalski/crystalski-screenshot-45.png") no-repeat;}
+.portfolio-items #crystalski-item-46 a {background: url("../images/crystalski/crystalski-screenshot-46.png") no-repeat;}
+.portfolio-items #crystalski-item-47 a {background: url("../images/crystalski/crystalski-screenshot-47.png") no-repeat;}
+.portfolio-items #crystalski-item-48 a {background: url("../images/crystalski/crystalski-screenshot-48.png") no-repeat;}
+.portfolio-items #crystalski-item-49 a {background: url("../images/crystalski/crystalski-screenshot-48.png") no-repeat;}
+
+/* === Portfolio Page - Leica === */
+.portfolio-items #leica-item-1 a {background: url("../images/leica/leica-screenshot-1.png") no-repeat;}
+.portfolio-items #leica-item-2 a {background: url("../images/leica/leica-screenshot-2.png") no-repeat;}
+.portfolio-items #leica-item-3 a {background: url("../images/leica/leica-screenshot-3.png") no-repeat;}
+.portfolio-items #leica-item-4 a {background: url("../images/leica/leica-screenshot-4.png") no-repeat;}
+.portfolio-items #leica-item-5 a {background: url("../images/leica/leica-screenshot-5.png") no-repeat;}
+.portfolio-items #leica-item-6 a {background: url("../images/leica/leica-screenshot-6.png") no-repeat;}
+.portfolio-items #leica-item-7 a {background: url("../images/leica/leica-screenshot-7.png") no-repeat;}
+.portfolio-items #leica-item-8 a {background: url("../images/leica/leica-screenshot-8.png") no-repeat;}
+.portfolio-items #leica-item-9 a {background: url("../images/leica/leica-screenshot-9.png") no-repeat;}
+
+/* === Portfolio Page - Windriver === */
+.portfolio-items #windriver-item-1 a {background: url("../images/windriver/windriver-screenshot-1.png") no-repeat;}
+.portfolio-items #windriver-item-2 a {background: url("../images/windriver/windriver-screenshot-2.png") no-repeat;}
+.portfolio-items #windriver-item-3 a {background: url("../images/windriver/windriver-screenshot-3.png") no-repeat;}
+.portfolio-items #windriver-item-4 a {background: url("../images/windriver/windriver-screenshot-4.png") no-repeat;}
+.portfolio-items #windriver-item-5 a {background: url("../images/windriver/windriver-screenshot-5.png") no-repeat;}
+.portfolio-items #windriver-item-6 a {background: url("../images/windriver/windriver-screenshot-6.png") no-repeat;}
+.portfolio-items #windriver-item-7 a {background: url("../images/windriver/windriver-screenshot-7.png") no-repeat;}
+.portfolio-items #windriver-item-8 a {background: url("../images/windriver/windriver-screenshot-8.png") no-repeat;}
+.portfolio-items #windriver-item-9 a {background: url("../images/windriver/windriver-screenshot-9.png") no-repeat;}
+.portfolio-items #windriver-item-10 a {background: url("../images/windriver/windriver-screenshot-10.png") no-repeat;}
+.portfolio-items #windriver-item-11 a {background: url("../images/windriver/windriver-screenshot-11.png") no-repeat;}
+.portfolio-items #windriver-item-12 a {background: url("../images/windriver/windriver-screenshot-12.png") no-repeat;}
+.portfolio-items #windriver-item-13 a {background: url("../images/windriver/windriver-screenshot-13.png") no-repeat;}
+.portfolio-items #windriver-item-14 a {background: url("../images/windriver/windriver-screenshot-14.png") no-repeat;}
+.portfolio-items #windriver-item-15 a {background: url("../images/windriver/windriver-screenshot-15.png") no-repeat;}
+.portfolio-items #windriver-item-16 a {background: url("../images/windriver/windriver-screenshot-16.png") no-repeat;}
+.portfolio-items #windriver-item-17 a {background: url("../images/windriver/windriver-screenshot-17.png") no-repeat;}
+.portfolio-items #windriver-item-18 a {background: url("../images/windriver/windriver-screenshot-18.png") no-repeat;}
+.portfolio-items #windriver-item-19 a {background: url("../images/windriver/windriver-screenshot-19.png") no-repeat;}
+.portfolio-items #windriver-item-20 a {background: url("../images/windriver/windriver-screenshot-20.png") no-repeat;}
